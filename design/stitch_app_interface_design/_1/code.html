@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新启航英语 - 首页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#23005c",
+                        "outline": "#727785",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "surface-tint": "#005ac2",
+                        "secondary-fixed": "#e9ddff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "surface-container-low": "#f2f3fd",
+                        "text-secondary": "#6B7280",
+                        "secondary": "#6b38d4",
+                        "surface-container": "#ecedf7",
+                        "tertiary": "#924700",
+                        "gradient-end": "#8B5CF6",
+                        "surface-bright": "#f9f9ff",
+                        "surface-card": "#FFFFFF",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-fixed": "#d8e2ff",
+                        "error": "#EF4444",
+                        "outline-variant": "#c2c6d6",
+                        "on-surface": "#191b23",
+                        "gradient-start": "#3B82F6",
+                        "text-primary": "#1F2937",
+                        "on-tertiary-container": "#fffbff",
+                        "warning": "#F59E0B",
+                        "background-page": "#F3F4F6",
+                        "inverse-surface": "#2e3038",
+                        "surface-variant": "#e1e2ec",
+                        "inverse-primary": "#adc6ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "background": "#f9f9ff",
+                        "secondary-container": "#8455ef",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191b23",
+                        "inverse-on-surface": "#eff0fa",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e7f2",
+                        "surface": "#f9f9ff",
+                        "primary": "#0058be",
+                        "on-tertiary-fixed": "#311400",
+                        "surface-dim": "#d8d9e3",
+                        "tertiary-container": "#b75b00",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fefcff",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#2170e4",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface-variant": "#424754",
+                        "surface-container-highest": "#e1e2ec",
+                        "success": "#10B981"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-gutter": "12px",
+                        "component-gap": "16px",
+                        "section-padding": "20px",
+                        "page-margin": "16px",
+                        "tab-bar-height": "60px"
+                    },
+                    "fontFamily": {
+                        "headline-card": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "body-main": ["Lexend"],
+                        "nav-title": ["Lexend"],
+                        "label-bold": ["Lexend"],
+                        "button-lg": ["Lexend"],
+                        "stat-number": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-card": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-secondary": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "nav-title": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "button-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "stat-number": ["20px", {"lineHeight": "28px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #F3F4F6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center items-start min-h-screen">
+<div class="w-full max-w-[428px] bg-background-page min-h-screen relative pb-[80px]">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] text-white flex justify-between items-center px-4 h-14 shadow-none">
+<div class="flex items-center gap-3">
+<button class="hover:opacity-90 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-lexend font-bold text-lg text-white font-black text-xl tracking-tight">新启航英语</span>
+</div>
+<div class="hover:opacity-90 transition-opacity active:scale-95 duration-200">
+<div class="w-8 h-8 rounded-full bg-white/20 border border-white/30 overflow-hidden">
+<img alt="User Profile" data-alt="close-up portrait of a young professional student with friendly expression against a clean soft studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrMLWKrUeRomVwxGdsXCtniCyv-zn6QTsRrqdrAG36NfM_aNTe2u4F7n-0fIl0I9gM5VJkRf5ymmtVI6149uQG3Tafa7w5bCydso8u9-rVAAHGLWcoL31R9fhhdMSZHlCYXzE6Oy5N6QbXbi75NILsYxzITfD4YUSQvtmF33z014QBmqx21pehlwAgDD5NCmiaxyn7vQgOuZrPyoAhdg5J0VvRBm_CoPOViqpNir1WiEiUka1SSZd5IY6Ob4un0oLVRZSE8P7QoNM"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-14 p-page-margin space-y-component-gap">
+<!-- Welcome Section with Progress -->
+<div class="bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] -mx-page-margin px-page-margin pb-8 pt-4 rounded-b-[32px] text-white">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="text-white/80 font-body-secondary text-body-secondary">继续加油，同学！</p>
+<h2 class="font-nav-title text-nav-title mt-1">学习进度</h2>
+</div>
+<div class="text-right">
+<span class="font-stat-number text-[32px] leading-none">65%</span>
+</div>
+</div>
+<div class="h-2 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-white rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Stats Card (Asymmetric Layout) -->
+<div class="bg-surface-card rounded-xl p-5 shadow-[0_8px_20px_rgba(0,0,0,0.04)] relative overflow-hidden -mt-10 mx-2">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-card text-headline-card text-text-primary">今日学习</h3>
+<p class="text-text-secondary font-body-secondary text-body-secondary mt-1">Daily Goal</p>
+</div>
+<div class="bg-primary-container/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-low" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="175.8" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-stat-number text-stat-number text-text-primary leading-none">3/10</span>
+<span class="text-[10px] text-text-secondary uppercase mt-1">Done</span>
+</div>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-text-secondary font-body-secondary text-body-secondary">单词记忆</span>
+<span class="text-text-primary font-label-bold text-label-bold">28/50</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-secondary font-body-secondary text-body-secondary">听力训练</span>
+<span class="text-text-primary font-label-bold text-label-bold">12m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-[60px] bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] text-white font-button-lg text-button-lg rounded-full shadow-lg active:scale-95 transition-transform duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span>开始学习</span>
+</button>
+<!-- Grid Entry Cards (Bento Style) -->
+<div class="grid grid-cols-2 gap-card-gutter">
+<!-- Mistakes Card -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100/50 hover:bg-gray-50 active:scale-95 transition-all">
+<div class="w-10 h-10 bg-error/10 rounded-lg flex items-center justify-center mb-3 text-error">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<h4 class="font-label-bold text-label-bold text-text-primary">错题集</h4>
+<p class="text-text-secondary text-[12px] mt-1">12 待复习</p>
+</div>
+<!-- Check-in Card -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100/50 hover:bg-gray-50 active:scale-95 transition-all">
+<div class="w-10 h-10 bg-warning/10 rounded-lg flex items-center justify-center mb-3 text-warning">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<h4 class="font-label-bold text-label-bold text-text-primary">打卡入口</h4>
+<p class="text-text-secondary text-[12px] mt-1">已连续 5 天</p>
+</div>
+</div>
+<!-- Ad/Motivation Banner -->
+<div class="relative h-32 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="minimalist aesthetic study space with open notebook, glasses, and cup of tea in morning sunlight with soft bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2kOmOFCM4kiKdex78T_U4xQDApBXXvU4UFy1hq8l85u0CeWsKYcUU5lv6ZdMioTlyOcXoRq5756cHQQo9od2L4Xt0IGubudtAxzxs3J-v3Hl1VXh0V4XGrW8G4bDiXX0jyc13X0Cb8CxYo_pOCjj1XFJY0O82kcRbg4W_uiINzuRz3DaZ3fzGl8EKhNCvYQj9BcJpID10SshyO8tyQMJ8q3yMjYgX_aSFOY4BM8joRSIt3rWA04SsaIZ7vR3Rpk-EPdYrgS1Klnc"/>
+<div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-4">
+<p class="text-white font-label-bold text-label-bold">学习新航向</p>
+<p class="text-white/80 text-[12px]">加入 7 天词汇挑战营，领取专属礼包</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<nav class="fixed bottom-0 w-full z-50 h-[60px] bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center px-6 pb-safe">
+<!-- Active Tab: 首页 -->
+<a class="flex flex-col items-center justify-center text-[#3B82F6] dark:text-[#60A5FA] font-bold font-lexend text-[12px] font-medium active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="mt-0.5">首页</span>
+</a>
+<!-- Inactive Tab: 我的 -->
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-lexend text-[12px] font-medium hover:bg-gray-50 dark:hover:bg-gray-800 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="mt-0.5">我的</span>
+</a>
+</nav>
+</div>
+</body></html>

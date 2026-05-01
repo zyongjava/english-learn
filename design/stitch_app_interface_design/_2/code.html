@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>新启航英语 - 我的</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#23005c",
+                        "outline": "#727785",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "surface-tint": "#005ac2",
+                        "secondary-fixed": "#e9ddff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "surface-container-low": "#f2f3fd",
+                        "text-secondary": "#6B7280",
+                        "secondary": "#6b38d4",
+                        "surface-container": "#ecedf7",
+                        "tertiary": "#924700",
+                        "gradient-end": "#8B5CF6",
+                        "surface-bright": "#f9f9ff",
+                        "surface-card": "#FFFFFF",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-fixed": "#d8e2ff",
+                        "error": "#EF4444",
+                        "outline-variant": "#c2c6d6",
+                        "on-surface": "#191b23",
+                        "gradient-start": "#3B82F6",
+                        "text-primary": "#1F2937",
+                        "on-tertiary-container": "#fffbff",
+                        "warning": "#F59E0B",
+                        "background-page": "#F3F4F6",
+                        "inverse-surface": "#2e3038",
+                        "surface-variant": "#e1e2ec",
+                        "inverse-primary": "#adc6ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "background": "#f9f9ff",
+                        "secondary-container": "#8455ef",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191b23",
+                        "inverse-on-surface": "#eff0fa",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e7f2",
+                        "surface": "#f9f9ff",
+                        "primary": "#0058be",
+                        "on-tertiary-fixed": "#311400",
+                        "tertiary-container": "#b75b00",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fefcff",
+                        "on-primary-fixed": "#001a42",
+                        "primary-container": "#2170e4",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface-variant": "#424754",
+                        "surface-container-highest": "#e1e2ec",
+                        "success": "#10B981"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-gutter": "12px",
+                        "component-gap": "16px",
+                        "section-padding": "20px",
+                        "page-margin": "16px",
+                        "tab-bar-height": "60px"
+                    },
+                    "fontFamily": {
+                        "headline-card": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "body-main": ["Lexend"],
+                        "nav-title": ["Lexend"],
+                        "label-bold": ["Lexend"],
+                        "button-lg": ["Lexend"],
+                        "stat-number": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-card": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-secondary": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "nav-title": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "button-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "stat-number": ["20px", {"lineHeight": "28px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #F3F4F6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-page text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] text-white flex justify-between items-center px-4 h-14 w-full shadow-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined hover:opacity-90 transition-opacity active:scale-95 duration-200 cursor-pointer">menu</span>
+<span class="text-white font-black text-xl tracking-tight">新启航英语</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/50 active:scale-95 duration-200 cursor-pointer">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="portrait of a young man with a friendly expression, professional headshot in warm natural lighting, soft blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACI8gnuSIqWUza2xkyX63RMz3WJo5q7s1Y3tF5uYmHiGhFfddEW36TKvhWkJabzmh54RIkcTpR22EBGw4XLrCR0gT65PhLPJsktsTNK2hRr3VoT6hu3W7TTbJfkQS5S0QlpNZVHBi4rKEYQ6EndkkuVc8oXdlqSlUJm0uoVG1ghwVVrwSzifV5StYTb7CaQDIWoZhqO8GnTb-AqoJGCR8EdoTyfQa2FLJDQG9Dfg2N0V-_WhX7gNv04JfVSgRhPp1fOwFEEMowkNg"/>
+</div>
+</header>
+<main class="pt-14 pb-[80px]">
+<!-- Hero Profile Section -->
+<section class="bg-gradient-to-b from-[#3B82F6] to-[#8B5CF6] px-4 pt-6 pb-12 rounded-b-[40px] text-white">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-20 h-20 rounded-full border-4 border-white/30 p-1">
+<img alt="User Avatar" class="w-full h-full rounded-full object-cover" data-alt="friendly smiling young adult man with clear skin and short dark hair, studio lighting, professional portrait photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9TefM8RMj13X77iND0coU4IG8sBpxVx8kfyKhPjOoUQETBrgDmj3z_jZLkgKvmS_3k9A84K6NH6We0HLOv8QwJ4QJZV_up-xnOpPf1vDzXdEs6S3m891wvM8m7v883Vkc0pOTq9D2QRO9M-4aA7D8sON1W0dGjD07s85wDRZmM8GOA1QwIwH9kbsVsA_7T7OaAVagqA_OX7qTFnccDXgSSg4P3NcYnD4_83vzPloiPltHhucp_VWYVKilvwCh3hVeteNTWbKcY_0"/>
+</div>
+<div>
+<h2 class="font-bold text-2xl mb-1">学海无涯</h2>
+<div class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 text-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-medium">1,250 积分</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Overview Cards -->
+<section class="px-4 -mt-8 grid grid-cols-2 gap-3">
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+<span class="text-text-secondary font-label-bold text-label-bold mb-1">累计单词</span>
+<span class="text-primary font-stat-number text-stat-number">12,450</span>
+</div>
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+<span class="text-text-secondary font-label-bold text-label-bold mb-1">正确总数</span>
+<span class="text-success font-stat-number text-stat-number">8,932</span>
+</div>
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+<span class="text-text-secondary font-label-bold text-label-bold mb-1">学习连胜</span>
+<span class="text-warning font-stat-number text-stat-number">15 天</span>
+</div>
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+<span class="text-text-secondary font-label-bold text-label-bold mb-1">坚持天数</span>
+<span class="text-[#8B5CF6] font-stat-number text-stat-number">128 天</span>
+</div>
+</section>
+<!-- Functional Bento Section -->
+<section class="px-4 mt-6 grid grid-cols-2 gap-3">
+<div class="bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border border-blue-100 flex flex-col justify-between aspect-square active:scale-[0.98] transition-transform">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div>
+<h3 class="font-headline-card text-headline-card text-on-surface">成就勋章</h3>
+<p class="text-text-secondary text-xs mt-1">已获得 12 枚</p>
+</div>
+</div>
+<div class="bg-gradient-to-br from-white to-purple-50 p-5 rounded-2xl shadow-sm border border-purple-100 flex flex-col justify-between aspect-square active:scale-[0.98] transition-transform">
+<div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">library_books</span>
+</div>
+<div>
+<h3 class="font-headline-card text-headline-card text-on-surface">生词账本</h3>
+<p class="text-text-secondary text-xs mt-1">128 个待复习</p>
+</div>
+</div>
+</section>
+<!-- Settings List Section -->
+<section class="px-4 mt-6 flex flex-col gap-3">
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between active:bg-gray-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="font-label-bold text-on-surface">偏好设置</span>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between active:bg-gray-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<span class="font-label-bold text-on-surface">账号与安全</span>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between active:bg-gray-50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600">
+<span class="material-symbols-outlined">help</span>
+</div>
+<span class="font-label-bold text-on-surface">帮助与反馈</span>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</section>
+<!-- System Description Banner -->
+<section class="px-4 mt-8 mb-4">
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-100/50 text-center">
+<p class="text-primary font-medium text-sm leading-relaxed opacity-80">
+                新启航英语 - 专注小学英语听说读写<br/>
+                陪伴孩子快乐成长
+            </p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 h-[60px] bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center px-6 pb-safe">
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:scale-95 duration-150 cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend text-[12px] font-medium">首页</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3B82F6] dark:text-[#60A5FA] font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:scale-95 duration-150 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-lexend text-[12px] font-medium">我的</span>
+</div>
+</nav>
+</body></html>

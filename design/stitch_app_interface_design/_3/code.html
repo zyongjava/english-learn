@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mistake Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#727785",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-card": "#FFFFFF",
+                        "primary-fixed-dim": "#adc6ff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-fixed": "#311400",
+                        "on-background": "#191b23",
+                        "surface-container-highest": "#e1e2ec",
+                        "gradient-end": "#8B5CF6",
+                        "surface-dim": "#d8d9e3",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#adc6ff",
+                        "background": "#f9f9ff",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#424754",
+                        "surface": "#f9f9ff",
+                        "outline-variant": "#c2c6d6",
+                        "error": "#EF4444",
+                        "tertiary-container": "#b75b00",
+                        "on-secondary-container": "#fffbff",
+                        "text-primary": "#1F2937",
+                        "primary": "#0058be",
+                        "surface-container-high": "#e6e7f2",
+                        "gradient-start": "#3B82F6",
+                        "secondary-container": "#8455ef",
+                        "background-page": "#F3F4F6",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "inverse-surface": "#2e3038",
+                        "on-primary-container": "#fefcff",
+                        "tertiary": "#924700",
+                        "surface-container-low": "#f2f3fd",
+                        "primary-container": "#2170e4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff0fa",
+                        "secondary-fixed": "#e9ddff",
+                        "text-secondary": "#6B7280",
+                        "tertiary-fixed": "#ffdcc6",
+                        "warning": "#F59E0B",
+                        "on-surface": "#191b23",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#6b38d4",
+                        "surface-container": "#ecedf7",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-primary-fixed": "#001a42",
+                        "surface-tint": "#005ac2",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e1e2ec",
+                        "success": "#10B981",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "tab-bar-height": "60px",
+                        "component-gap": "16px",
+                        "card-gutter": "12px",
+                        "page-margin": "16px",
+                        "section-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-card": ["Lexend"],
+                        "body-main": ["Lexend"],
+                        "stat-number": ["Lexend"],
+                        "body-secondary": ["Lexend"],
+                        "label-bold": ["Lexend"],
+                        "button-lg": ["Lexend"],
+                        "nav-title": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-card": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "stat-number": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-secondary": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "button-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "nav-title": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f9f9ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-active {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center px-4 h-14 bg-gradient-to-r from-gradient-start to-gradient-end text-white shadow-sm">
+<div class="flex items-center w-full">
+<button class="material-symbols-outlined mr-4 active:scale-95 transition-transform" data-icon="arrow_back">arrow_back</button>
+<h1 class="font-['Lexend'] font-bold text-lg">Mistake Collection</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[72px] px-page-margin">
+<!-- Filter Tabs -->
+<div class="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
+<button class="px-5 py-2 bg-primary text-white rounded-full font-label-bold text-body-secondary active:scale-95 transition-transform whitespace-nowrap">全部</button>
+<button class="px-5 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-bold text-body-secondary active:scale-95 transition-transform whitespace-nowrap">单词认识</button>
+<button class="px-5 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-bold text-body-secondary active:scale-95 transition-transform whitespace-nowrap">单词拼写</button>
+</div>
+<!-- Review Tip Card -->
+<div class="mb-component-gap p-4 bg-primary-fixed text-on-primary-fixed rounded-xl border border-primary-fixed-dim/30 shadow-sm flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<div>
+<p class="font-label-bold text-body-secondary mb-1">复习提示</p>
+<p class="font-body-secondary text-[13px] leading-relaxed opacity-90">连续答对2次后，题目会自动从错题集移除。建议每天复习一次错题集，巩固记忆！</p>
+</div>
+</div>
+<!-- Mistake Count Banner (Bento style element) -->
+<div class="grid grid-cols-2 gap-card-gutter mb-component-gap">
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest">
+<p class="text-text-secondary text-body-secondary">待温故</p>
+<p class="font-stat-number text-primary mt-1">24</p>
+</div>
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest">
+<p class="text-text-secondary text-body-secondary">已斩获</p>
+<p class="font-stat-number text-success mt-1">156</p>
+</div>
+</div>
+<!-- Mistakes List -->
+<div class="space-y-card-gutter">
+<!-- Mistake Item 1 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4 hover:border-primary-fixed transition-colors">
+<div class="w-12 h-12 flex-shrink-0 bg-blue-50 text-primary flex items-center justify-center rounded-lg font-bold text-lg">
+                    认
+                </div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-card text-on-surface">sad</h3>
+<span class="text-error font-label-bold text-[12px] bg-error-container/30 px-2 py-0.5 rounded">x1 错误次数</span>
+</div>
+<p class="text-text-secondary font-body-secondary mt-1">adj. 难过的, 悲哀的</p>
+</div>
+<button class="material-symbols-outlined text-outline active:scale-95 transition-transform" data-icon="volume_up">volume_up</button>
+</div>
+<!-- Mistake Item 2 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4 hover:border-primary-fixed transition-colors">
+<div class="w-12 h-12 flex-shrink-0 bg-purple-50 text-secondary flex items-center justify-center rounded-lg font-bold text-lg">
+                    拼
+                </div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-card text-on-surface">abandon</h3>
+<span class="text-error font-label-bold text-[12px] bg-error-container/30 px-2 py-0.5 rounded">x3 错误次数</span>
+</div>
+<p class="text-text-secondary font-body-secondary mt-1">vt. 放弃, 遗弃, 沉溺</p>
+</div>
+<button class="material-symbols-outlined text-outline active:scale-95 transition-transform" data-icon="volume_up">volume_up</button>
+</div>
+<!-- Mistake Item 3 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4 hover:border-primary-fixed transition-colors">
+<div class="w-12 h-12 flex-shrink-0 bg-blue-50 text-primary flex items-center justify-center rounded-lg font-bold text-lg">
+                    认
+                </div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-card text-on-surface">complicate</h3>
+<span class="text-error font-label-bold text-[12px] bg-error-container/30 px-2 py-0.5 rounded">x2 错误次数</span>
+</div>
+<p class="text-text-secondary font-body-secondary mt-1">vt. 使复杂化</p>
+</div>
+<button class="material-symbols-outlined text-outline active:scale-95 transition-transform" data-icon="volume_up">volume_up</button>
+</div>
+<!-- Mistake Item 4 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4 hover:border-primary-fixed transition-colors">
+<div class="w-12 h-12 flex-shrink-0 bg-purple-50 text-secondary flex items-center justify-center rounded-lg font-bold text-lg">
+                    拼
+                </div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-card text-on-surface">diligence</h3>
+<span class="text-error font-label-bold text-[12px] bg-error-container/30 px-2 py-0.5 rounded">x1 错误次数</span>
+</div>
+<p class="text-text-secondary font-body-secondary mt-1">n. 勤奋, 用功</p>
+</div>
+<button class="material-symbols-outlined text-outline active:scale-95 transition-transform" data-icon="volume_up">volume_up</button>
+</div>
+<!-- Mistake Item 5 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-sm border border-surface-container-highest flex items-center gap-4 hover:border-primary-fixed transition-colors">
+<div class="w-12 h-12 flex-shrink-0 bg-blue-50 text-primary flex items-center justify-center rounded-lg font-bold text-lg">
+                    认
+                </div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-card text-on-surface">genuine</h3>
+<span class="text-error font-label-bold text-[12px] bg-error-container/30 px-2 py-0.5 rounded">x2 错误次数</span>
+</div>
+<p class="text-text-secondary font-body-secondary mt-1">adj. 真实的, 诚恳的</p>
+</div>
+<button class="material-symbols-outlined text-outline active:scale-95 transition-transform" data-icon="volume_up">volume_up</button>
+</div>
+</div>
+<!-- Floating Action Button - Start Review -->
+<button class="fixed bottom-[84px] left-1/2 -translate-x-1/2 w-[calc(100%-32px)] h-[56px] bg-gradient-to-r from-gradient-start to-gradient-end text-white font-button-lg rounded-full shadow-lg active:scale-95 transition-transform z-40 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+            开始复习
+        </button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[60px] px-2 bg-white/80 backdrop-blur-md shadow-[0_-2px_10px_rgba(0,0,0,0.05)] border-t border-gray-100">
+<a class="flex flex-col items-center justify-center text-gray-400 font-['Lexend'] text-[10px] font-medium active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 font-bold scale-110 font-['Lexend'] text-[10px] active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px] nav-active" data-icon="menu_book">menu_book</span>
+<span>Mistakes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 font-['Lexend'] text-[10px] font-medium active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="psychology">psychology</span>
+<span>Review</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 font-['Lexend'] text-[10px] font-medium active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>

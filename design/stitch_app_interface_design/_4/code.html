@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#d8e2ff",
+                    "primary-container": "#2170e4",
+                    "on-tertiary": "#ffffff",
+                    "gradient-start": "#3B82F6",
+                    "surface": "#f9f9ff",
+                    "outline-variant": "#c2c6d6",
+                    "text-secondary": "#6B7280",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-surface-variant": "#424754",
+                    "inverse-surface": "#2e3038",
+                    "inverse-primary": "#adc6ff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "tertiary": "#924700",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f9f9ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "secondary-container": "#8455ef",
+                    "surface-container-highest": "#e1e2ec",
+                    "on-tertiary-fixed": "#311400",
+                    "on-primary-fixed": "#001a42",
+                    "surface-container-high": "#e6e7f2",
+                    "secondary-fixed": "#e9ddff",
+                    "text-primary": "#1F2937",
+                    "on-tertiary-container": "#fffbff",
+                    "background-page": "#F3F4F6",
+                    "tertiary-container": "#b75b00",
+                    "surface-card": "#FFFFFF",
+                    "inverse-on-surface": "#eff0fa",
+                    "surface-tint": "#005ac2",
+                    "surface-dim": "#d8d9e3",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "on-secondary-fixed": "#23005c",
+                    "tertiary-fixed": "#ffdcc6",
+                    "primary": "#0058be",
+                    "on-primary-fixed-variant": "#004395",
+                    "warning": "#F59E0B",
+                    "on-secondary-container": "#fffbff",
+                    "on-error": "#ffffff",
+                    "on-background": "#191b23",
+                    "error": "#EF4444",
+                    "surface-container": "#ecedf7",
+                    "error-container": "#ffdad6",
+                    "success": "#10B981",
+                    "on-primary-container": "#fefcff",
+                    "gradient-end": "#8B5CF6",
+                    "on-surface": "#191b23",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "surface-container-low": "#f2f3fd",
+                    "outline": "#727785",
+                    "secondary": "#6b38d4",
+                    "surface-variant": "#e1e2ec",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "component-gap": "16px",
+                    "page-margin": "16px",
+                    "card-gutter": "12px",
+                    "tab-bar-height": "60px",
+                    "section-padding": "20px"
+            },
+            "fontFamily": {
+                    "body-secondary": ["Lexend"],
+                    "body-main": ["Lexend"],
+                    "stat-number": ["Lexend"],
+                    "label-bold": ["Lexend"],
+                    "button-lg": ["Lexend"],
+                    "headline-card": ["Lexend"],
+                    "nav-title": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-secondary": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "stat-number": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "button-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-card": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "nav-title": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .active-press {
+            transition: transform 0.1s ease;
+        }
+        .active-press:active {
+            transform: scale(0.95);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-page min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 h-16 bg-gradient-to-r from-gradient-start to-gradient-end shadow-md">
+<div class="flex items-center gap-3">
+<button class="active-press text-white">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-white font-lexend font-bold text-lg">选择学习模式</h1>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/20">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close up portrait of a friendly male user in a professional setting with soft studio lighting and a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCteCR1sm-s3TT9WWoFVvS927SQD1DaDhcC-Hxbnf_WbzqsThkHy-S5UFV8lKWc0o_16IbbrRvqWXzvCEr0X-HK4d-4NuFvdRXzswgFSjz5y0aUgr9CxJlWa-Uy1xOEMXubd2M0518HlrWmFutTZXTN3-J7rlvaqjXXt006RquT0cGEZf973_Hbw04nlTBvezIaD-2fwF7-J6u-dEk9NTjNlH9k0mE5YVte9tvxD7HL0d9SRldw_AJxgNuujCkwKMJj38hlceFi-K4"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-20 px-4 max-w-[428px] mx-auto space-y-4">
+<!-- Main Container Card -->
+<section class="bg-surface-card rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 space-y-6">
+<!-- Unit Selection -->
+<div class="space-y-2">
+<label class="text-text-secondary font-label-bold text-body-secondary block px-1">选择单元</label>
+<div class="relative active-press">
+<button class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3.5 flex items-center justify-between group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="folder_open">folder_open</span>
+<span class="font-body-main text-text-primary">Unit 1: Feelings (22个单词)</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Study Mode Buttons (Bento Style Grid) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Large Primary Button (Full Width) -->
+<button class="col-span-2 active-press h-[72px] rounded-xl bg-gradient-to-r from-success to-[#82E0AA] text-white flex items-center justify-center gap-3 shadow-lg shadow-success/20">
+<span class="material-symbols-outlined text-[28px]" data-icon="book" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="font-button-lg text-button-lg">单词学习</span>
+</button>
+<!-- Blue Square Button -->
+<button class="active-press aspect-square rounded-xl bg-gradient-to-br from-primary-container to-gradient-start text-white flex flex-col items-center justify-center gap-2 shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-[32px]" data-icon="visibility" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-label-bold text-body-main">单词认识</span>
+</button>
+<!-- Green Square Button -->
+<button class="active-press aspect-square rounded-xl bg-gradient-to-br from-success to-[#2ECC71] text-white flex flex-col items-center justify-center gap-2 shadow-lg shadow-success/20">
+<span class="material-symbols-outlined text-[32px]" data-icon="edit_square" style="font-variation-settings: 'FILL' 1;">edit_square</span>
+<span class="font-label-bold text-body-main">单词拼写</span>
+</button>
+</div>
+<!-- Instruction Section -->
+<div class="bg-[#F0FDF4] rounded-xl p-5 space-y-4 border border-[#DCFCE7]">
+<div class="flex items-center gap-2 text-success">
+<span class="material-symbols-outlined text-[20px]" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<h3 class="font-headline-card text-headline-card">学习说明</h3>
+</div>
+<ul class="space-y-3">
+<li class="flex gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-success flex-shrink-0"></div>
+<p class="text-text-primary text-body-secondary leading-relaxed">
+<span class="font-bold text-success">单词学习:</span> 看单词、听发音，跟读练习，零基础也能学
+                        </p>
+</li>
+<li class="flex gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-success flex-shrink-0"></div>
+<p class="text-text-primary text-body-secondary leading-relaxed">
+<span class="font-bold text-success">单词认识:</span> 看英语单词，选择对应的中文意思
+                        </p>
+</li>
+<li class="flex gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-success flex-shrink-0"></div>
+<p class="text-text-primary text-body-secondary leading-relaxed">
+<span class="font-bold text-success">单词拼写:</span> 听发音，输入正确的英语单词
+                        </p>
+</li>
+</ul>
+<div class="pt-2 flex items-center gap-2 px-2 py-1.5 bg-warning/10 rounded-lg">
+<span class="material-symbols-outlined text-warning text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<p class="text-warning font-label-bold text-[12px]">答错的题目会自动加入错题集哦！</p>
+</div>
+</div>
+</section>
+<!-- Promotional Card -->
+<div class="relative rounded-xl overflow-hidden h-32 shadow-md">
+<img alt="Students studying" class="w-full h-full object-cover" data-alt="Group of diverse, happy students collaborating in a modern bright library with sunlight filtering through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCul4tQuBGU8MqGbo9XEfHByTia0iJ2EhzWLs13CzCjI1ee04ig5mVuJ1x-XEcNcpma0YwZ__9xhisYii3KXc-fQlP4vgcDUahhxCVQnCudO40uEiKQ3V27eIZcjEosi8O-FhLMVWa58GfiftSeA0aFfWgcooc-CZSV0zRtmrraeNeemGtduPtpgQsYgUXHKZ7HMB5_fAJ1MXojVfnU5TddzsQJhzS-ODDbERaXM8cGJ2DDExg7nKzf6ILHo2kCKFWpTiNYvKGQZK4"/>
+<div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-4">
+<span class="text-white font-headline-card text-headline-card">解锁高级学习模式</span>
+<span class="text-white/80 text-body-secondary">体验AI发音实时测评系统</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[60px] bg-white dark:bg-slate-900 px-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] border-t border-slate-100">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-slate-400 active-press hover:bg-slate-50 w-full h-full">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</button>
+<!-- Learn (Active) -->
+<button class="flex flex-col items-center justify-center text-blue-600 font-bold active-press hover:bg-slate-50 w-full h-full">
+<span class="material-symbols-outlined" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-lexend text-[10px] font-bold">Learn</span>
+</button>
+<!-- Review -->
+<button class="flex flex-col items-center justify-center text-slate-400 active-press hover:bg-slate-50 w-full h-full">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-lexend text-[10px] font-medium">Review</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-slate-400 active-press hover:bg-slate-50 w-full h-full">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

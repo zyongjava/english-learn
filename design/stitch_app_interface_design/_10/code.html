@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Achievement Badges</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "gradient-end": "#8B5CF6",
+                    "primary-fixed-dim": "#adc6ff",
+                    "tertiary": "#924700",
+                    "background": "#f9f9ff",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary-fixed": "#311400",
+                    "surface-dim": "#d8d9e3",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "on-primary-fixed": "#001a42",
+                    "error": "#EF4444",
+                    "tertiary-container": "#b75b00",
+                    "outline": "#727785",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-background": "#191b23",
+                    "on-secondary-fixed": "#23005c",
+                    "surface-tint": "#005ac2",
+                    "primary": "#0058be",
+                    "inverse-primary": "#adc6ff",
+                    "surface-bright": "#f9f9ff",
+                    "secondary-fixed": "#e9ddff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#424754",
+                    "on-primary-fixed-variant": "#004395",
+                    "surface-container-high": "#e6e7f2",
+                    "surface-container-highest": "#e1e2ec",
+                    "success": "#10B981",
+                    "primary-fixed": "#d8e2ff",
+                    "secondary": "#6b38d4",
+                    "on-tertiary-container": "#fffbff",
+                    "outline-variant": "#c2c6d6",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#fefcff",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eff0fa",
+                    "surface": "#f9f9ff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "inverse-surface": "#2e3038",
+                    "warning": "#F59E0B",
+                    "surface-container": "#ecedf7",
+                    "gradient-start": "#3B82F6",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "on-surface": "#191b23",
+                    "surface-container-low": "#f2f3fd",
+                    "text-primary": "#1F2937",
+                    "text-secondary": "#6B7280",
+                    "surface-card": "#FFFFFF",
+                    "secondary-container": "#8455ef",
+                    "primary-container": "#2170e4",
+                    "background-page": "#F3F4F6",
+                    "surface-variant": "#e1e2ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-gutter": "12px",
+                    "tab-bar-height": "60px",
+                    "page-margin": "16px",
+                    "section-padding": "20px",
+                    "component-gap": "16px"
+            },
+            "fontFamily": {
+                    "body-secondary": ["Lexend"],
+                    "body-main": ["Lexend"],
+                    "nav-title": ["Lexend"],
+                    "button-lg": ["Lexend"],
+                    "stat-number": ["Lexend"],
+                    "headline-card": ["Lexend"],
+                    "label-bold": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-secondary": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "nav-title": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "button-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "stat-number": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "headline-card": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-main text-on-background selection:bg-primary-fixed">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-between px-4 h-14 w-full">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-50 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-blue-500 dark:text-blue-400" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Lexend'] font-bold text-lg text-on-surface">Achievements</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="pt-14 pb-[80px] max-w-md mx-auto min-h-screen">
+<!-- Premium Header Section with Gradient -->
+<section class="relative overflow-hidden bg-gradient-to-br from-gradient-start to-gradient-end px-page-margin py-8 text-white rounded-b-[32px] shadow-lg">
+<div class="relative z-10">
+<div class="flex items-end gap-2 mb-2">
+<span class="font-stat-number text-[48px] leading-none">9/16</span>
+<span class="font-label-bold opacity-90 mb-2">已解锁成就</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-3 bg-white/20 rounded-full overflow-hidden mb-2 backdrop-blur-sm">
+<div class="h-full bg-white w-[56%] rounded-full shadow-[0_0_12px_rgba(255,255,255,0.4)]"></div>
+</div>
+<p class="text-xs font-body-secondary opacity-80">再解锁 2 个成就即可获得「学霸」称号</p>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute -left-4 bottom-0 w-24 h-24 bg-gradient-end/30 rounded-full blur-xl"></div>
+</section>
+<!-- Filter Tabs -->
+<div class="mt-6 flex gap-3 overflow-x-auto px-page-margin hide-scrollbar">
+<button class="flex-none px-5 py-2.5 rounded-full bg-primary text-white font-label-bold shadow-md shadow-primary/20 active:scale-95 transition-all">
+                🌟 全部
+            </button>
+<button class="flex-none px-5 py-2.5 rounded-full bg-white text-text-secondary font-label-bold border border-outline-variant/30 hover:bg-gray-50 active:scale-95 transition-all">
+                🐣 新手
+            </button>
+<button class="flex-none px-5 py-2.5 rounded-full bg-white text-text-secondary font-label-bold border border-outline-variant/30 hover:bg-gray-50 active:scale-95 transition-all">
+                🔥 连胜
+            </button>
+<button class="flex-none px-5 py-2.5 rounded-full bg-white text-text-secondary font-label-bold border border-outline-variant/30 hover:bg-gray-50 active:scale-95 transition-all">
+                📚 词汇
+            </button>
+</div>
+<!-- Badge List -->
+<div class="mt-6 px-page-margin space-y-component-gap">
+<!-- Badge Item 1 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center gap-4 transition-all hover:shadow-md">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-0.5">
+<h3 class="font-headline-card text-text-primary">初次学习</h3>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 font-bold uppercase tracking-wider">普通</span>
+</div>
+<p class="text-body-secondary text-text-secondary mb-1">完成第一次英语学习课程</p>
+<div class="flex items-center gap-1 text-xs text-success font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>已解锁 · +10金币</span>
+</div>
+</div>
+</div>
+<!-- Badge Item 2 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center gap-4 transition-all hover:shadow-md">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="target">target</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-0.5">
+<h3 class="font-headline-card text-text-primary">认读达人</h3>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 font-bold uppercase tracking-wider">稀有</span>
+</div>
+<p class="text-body-secondary text-text-secondary mb-1">连续 7 天完成单词测试</p>
+<div class="flex items-center gap-1 text-xs text-success font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>已解锁 · +50金币</span>
+</div>
+</div>
+</div>
+<!-- Badge Item 3 (Locked) -->
+<div class="bg-surface-card/60 p-4 rounded-xl border border-dashed border-outline-variant/50 flex items-center gap-4 transition-all opacity-70 grayscale-[0.5]">
+<div class="w-16 h-16 rounded-2xl bg-gray-200 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-gray-400 text-3xl" data-icon="pencil">stylus_pencil</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-0.5">
+<h3 class="font-headline-card text-text-primary">笔耕不辍</h3>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-bold uppercase tracking-wider">史诗</span>
+</div>
+<p class="text-body-secondary text-text-secondary mb-1">累积练习时长达到 100 小时</p>
+<div class="flex items-center gap-1 text-xs text-text-secondary font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span>未解锁</span>
+</div>
+</div>
+</div>
+<!-- Badge Item 4 -->
+<div class="bg-surface-card p-4 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center gap-4 transition-all hover:shadow-md">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="rainbow">colors</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-0.5">
+<h3 class="font-headline-card text-text-primary">知识之虹</h3>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 font-bold uppercase tracking-wider">普通</span>
+</div>
+<p class="text-body-secondary text-text-secondary mb-1">掌握超过 500 个核心词汇</p>
+<div class="flex items-center gap-1 text-xs text-success font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>已解锁 · +30金币</span>
+</div>
+</div>
+</div>
+<!-- Featured Image for encouragement -->
+<div class="relative w-full h-32 rounded-2xl overflow-hidden mt-8 group">
+<img alt="Achievement Motivation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="whimsical 3D illustration of a gold trophy on a soft blue background with colorful confetti and sparkles around it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0IpLVvRLvOqOQAh-IoJ02Z1Jqz_xnAUq_sl0G4nv4iIHmketO50QCAqN6LSoaPpZo6yBK5N3c5qQnP-6qyCAU9Kqe__grd3ZvJlda9L_cRIrIq5zRixyFYW2J0YGjvE6L0VoV8edLl6FlFDqX-UUVqw_hZXTaMXT7ecH31Zw9BSrCihFBKHK7zXQ37jB7_KxaBljeDQSb6cic7znUn7IYVjlsIaRk3UBrC5ojssTZsaUZxqFzeZlnCYabIwYlpnja5I8rYZrpc_Y"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="text-white font-label-bold text-center px-4">挑战自我，解锁更多专属荣耀</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 bg-white dark:bg-gray-900 h-[60px] shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[24px]" data-icon="school">school</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Learn</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[24px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Practice</span>
+</div>
+<!-- Active Tab: Badges -->
+<div class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 scale-95 transition-all">
+<span class="material-symbols-outlined text-[24px]" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-['Lexend'] text-[10px]">Badges</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+</body></html>

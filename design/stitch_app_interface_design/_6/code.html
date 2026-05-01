@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Check-in Calendar - 新启航英语</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#311400",
+                      "primary": "#0058be",
+                      "surface-bright": "#f9f9ff",
+                      "outline": "#727785",
+                      "on-surface": "#191b23",
+                      "error": "#EF4444",
+                      "secondary": "#6b38d4",
+                      "surface-card": "#FFFFFF",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#e9ddff",
+                      "tertiary-container": "#b75b00",
+                      "on-tertiary-fixed-variant": "#723600",
+                      "on-primary-fixed": "#001a42",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "text-primary": "#1F2937",
+                      "success": "#10B981",
+                      "surface": "#f9f9ff",
+                      "on-primary-fixed-variant": "#004395",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "surface-container-highest": "#e1e2ec",
+                      "on-tertiary-container": "#fffbff",
+                      "on-secondary-fixed": "#23005c",
+                      "background": "#f9f9ff",
+                      "tertiary-fixed-dim": "#ffb786",
+                      "surface-container": "#ecedf7",
+                      "inverse-primary": "#adc6ff",
+                      "on-surface-variant": "#424754",
+                      "primary-fixed": "#d8e2ff",
+                      "on-secondary-container": "#fffbff",
+                      "text-secondary": "#6B7280",
+                      "error-container": "#ffdad6",
+                      "on-background": "#191b23",
+                      "gradient-end": "#8B5CF6",
+                      "tertiary": "#924700",
+                      "outline-variant": "#c2c6d6",
+                      "surface-container-low": "#f2f3fd",
+                      "inverse-surface": "#2e3038",
+                      "gradient-start": "#3B82F6",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-tint": "#005ac2",
+                      "inverse-on-surface": "#eff0fa",
+                      "background-page": "#F3F4F6",
+                      "tertiary-fixed": "#ffdcc6",
+                      "warning": "#F59E0B",
+                      "primary-container": "#2170e4",
+                      "surface-dim": "#d8d9e3",
+                      "secondary-container": "#8455ef",
+                      "surface-variant": "#e1e2ec",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e6e7f2",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#fefcff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-padding": "20px",
+                      "card-gutter": "12px",
+                      "component-gap": "16px",
+                      "tab-bar-height": "60px",
+                      "page-margin": "16px"
+              },
+              "fontFamily": {
+                      "button-lg": ["Lexend"],
+                      "nav-title": ["Lexend"],
+                      "body-secondary": ["Lexend"],
+                      "body-main": ["Lexend"],
+                      "label-bold": ["Lexend"],
+                      "stat-number": ["Lexend"],
+                      "headline-card": ["Lexend"]
+              },
+              "fontSize": {
+                      "button-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "nav-title": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-secondary": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "stat-number": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                      "headline-card": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        .bg-brand-gradient {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full h-14 z-50 flex items-center px-4 bg-blue-600 dark:bg-blue-900 shadow-lg bg-brand-gradient">
+<button class="flex items-center justify-center p-2 text-white active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Lexend'] font-bold text-lg text-white ml-2">Check-in Calendar</h1>
+</header>
+<main class="pt-20 px-page-margin flex flex-col gap-component-gap">
+<!-- Calendar Section -->
+<section class="bg-surface-card rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-card text-headline-card text-text-primary">2026年4月</h2>
+<div class="flex gap-2">
+<button class="p-1 text-text-secondary"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 text-text-secondary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="calendar-grid mb-2">
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">日</div>
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">一</div>
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">二</div>
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">三</div>
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">四</div>
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">五</div>
+<div class="text-center text-text-secondary font-label-bold text-[12px] py-2">六</div>
+</div>
+<div class="calendar-grid gap-y-2">
+<!-- Row 1: Empty slots for padding -->
+<div class="aspect-square flex items-center justify-center">日</div>
+<div class="aspect-square flex items-center justify-center">一</div>
+<div class="aspect-square flex items-center justify-center">二</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">三</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">四</div>
+<div class="aspect-square flex items-center justify-center relative">五</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">六</div>
+<!-- Row 2 -->
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">5</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">6</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">7</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">8</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">9</div>
+<!-- Today Highlight (Example: 10th) -->
+<div class="aspect-square flex items-center justify-center relative">
+<span class="z-10 font-body-main text-primary font-bold">10</span>
+<div class="absolute inset-1 rounded-full border-2 border-primary"></div>
+</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">11</div>
+<!-- Row 3 -->
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">12</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">13</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">14</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">15</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">16</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">17</div>
+<div class="aspect-square flex items-center justify-center font-body-main text-text-primary">18</div>
+<!-- Days continue... (Simplified for visual) -->
+<div class="col-span-7 py-4 flex items-center justify-center">
+<div class="h-[2px] w-8 bg-surface-container rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-[#F0FDF4] border border-success/20 rounded-xl p-5 shadow-sm">
+<h2 class="font-headline-card text-headline-card text-[#166534] mb-4">2026年4月</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-bold text-body-secondary text-[#166534]/70">打卡天数</span>
+<div class="flex items-baseline gap-1">
+<span class="font-stat-number text-[32px] text-[#166534]">1</span>
+<span class="text-body-secondary font-body-main text-[#166534]/60">days</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-bold text-body-secondary text-[#166534]/70">打卡完成率</span>
+<div class="flex items-baseline gap-1">
+<span class="font-stat-number text-[32px] text-[#166534]">3</span>
+<span class="text-body-secondary font-body-main text-[#166534]/60">%</span>
+</div>
+</div>
+</div>
+<div class="mt-4 w-full bg-[#DCFCE7] h-2 rounded-full overflow-hidden">
+<div class="bg-success h-full w-[3%] rounded-full"></div>
+</div>
+</section>
+<!-- Rules Section -->
+<section class="bg-surface-card rounded-xl p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<h2 class="font-headline-card text-headline-card text-text-primary">2026年4月</h2>
+</div>
+<ul class="space-y-3">
+<li class="flex gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-fixed text-primary flex items-center justify-center text-[10px] font-bold">1</span>
+<p class="font-body-secondary text-body-secondary text-text-secondary">每日完成至少一个课程模块即可自动打卡。</p>
+</li>
+<li class="flex gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-fixed text-primary flex items-center justify-center text-[10px] font-bold">2</span>
+<p class="font-body-secondary text-body-secondary text-text-secondary">连续打卡7天可获得专属成就勋章。</p>
+</li>
+<li class="flex gap-3">
+<span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-fixed text-primary flex items-center justify-center text-[10px] font-bold">3</span>
+<p class="font-body-secondary text-body-secondary text-text-secondary">遗漏打卡可使用补签卡在3日内补签。</p>
+</li>
+</ul>
+</section>
+<!-- Decorative Illustration -->
+<div class="w-full flex justify-center py-4">
+<img alt="Learning illustration" class="w-3/4 rounded-xl opacity-80" data-alt="vibrant educational 3D illustration of a friendly cartoon owl reading a book with magical sparkles and soft blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmdWwygUUQbRo7Niw38-YXmF4f3HjgFTpzBwlDZMdJu4DWczk1q5ecx97EkSRFERUo2Ksm9evrAShozOuQNbqJ9FanQPFRDSC1cxImlNKUfrBBE2cD2jecKOQCoXwNRQSkSKJxEbmaI_VbEeZKJd-bpyHdwelaPGKsMwcAc1fnR-RCmmsyq3BPTVDqFEMWq7V3Xel8Cm7h5Bq-43Qg3QKruqchLCdx6A1mNVOe6jdWS-pOm361Ph6uk42sWRvRK7nlyAfeQWVCK7g"/>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-[60px] z-50 flex justify-around items-center px-4 pb-safe bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-['Lexend'] text-xs font-semibold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Lexend'] text-xs font-semibold">Review</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-['Lexend'] text-xs font-semibold">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Lexend'] text-xs font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>
