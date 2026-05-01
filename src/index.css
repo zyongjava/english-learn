@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+:root {
+  --primary: 59 130 246;
+  --success: 34 197 94;
+  --warning: 245 158 11;
+  --danger: 239 68 68;
+
+  /* 新设计系统颜色 */
+  --surface: #f9f9ff;
+  --surface-dim: #d8d9e3;
+  --surface-bright: #f9f9ff;
+  --surface-container: #ecedf7;
+  --on-surface: #191b23;
+  --on-surface-variant: #424754;
+  --primary-blue: #0058be;
+  --primary-purple: #8B5CF6;
+  --gradient-start: #3B82F6;
+  --gradient-end: #8B5CF6;
+  --success-green: #10B981;
+  --warning-orange: #F59E0B;
+  --error-red: #EF4444;
+  --background-page: #F3F4F6;
+  --surface-card: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background-page);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-pop {
+  animation: pop 0.3s ease-out;
+}
+
+/* 新设计系统样式 */
+
+/* 渐变背景 */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+/* 卡片样式 */
+.card-modern {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-pressable {
+  @apply active:scale-95 transition-transform duration-200;
+}
+
+/* 主按钮 - 渐变 */
+.btn-gradient {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  @apply text-white font-semibold py-4 px-8 rounded-2xl text-lg transition-all duration-200 active:scale-95 shadow-lg;
+}
+
+/* 旧按钮样式保留兼容 */
+.btn-primary {
+  background: linear-gradient(135deg, #4f9cff 0%, #3b82f6 100%);
+  @apply hover:shadow-xl text-white font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-200 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-white/90 hover:bg-white text-gray-700 font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-200 active:scale-95 shadow-lg;
+}
+
+.btn-danger {
+  @apply bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-xl text-base transition-all duration-200 active:scale-95;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  @apply hover:shadow-xl text-white font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-200 active:scale-95;
+}
+
+.card {
+  @apply bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8;
+}
+
+.option-btn {
+  @apply w-full py-5 px-6 rounded-2xl text-lg font-medium border-3 border-gray-200 transition-all duration-200;
+  @apply hover:border-blue-400 hover:bg-blue-50 active:scale-98;
+}
+
+.option-btn.correct {
+  @apply border-green-500 bg-green-100 text-green-700;
+}
+
+.option-btn.wrong {
+  @apply border-red-500 bg-red-100 text-red-700;
+}
+
+.option-btn.selected {
+  @apply border-blue-500 bg-blue-100;
+}
+
+.progress-bar {
+  @apply h-3 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-500;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 text-xl border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none transition-colors;
+}
+
+.word-display {
+  @apply text-6xl font-bold text-blue-600 mb-2;
+}
+
+.phonetic {
+  @apply text-2xl text-gray-500 mb-4;
+}
+
+.meaning {
+  @apply text-3xl font-semibold text-gray-800;
+}
+
+.nav-btn {
+  @apply flex flex-col items-center gap-2 p-4 rounded-2xl transition-all duration-200;
+  @apply hover:bg-white/20 text-white;
+}
+
+.nav-btn.active {
+  @apply bg-white/30;
+}
+
+/* 底部 Tab 栏 */
+.tab-bar {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100;
+  height: 60px;
+  z-index: 50;
+}
+
+.tab-item {
+  @apply flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all duration-200;
+}
+
+.tab-item.active {
+  @apply text-blue-600;
+}
+
+.tab-item:not(.active) {
+  @apply text-gray-400;
+}
+
+/* 环形进度条 */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* 统计数字 */
+.stat-number {
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* 页面内容区域（留出 Tab 栏空间） */
+.page-content {
+  padding-bottom: 76px;
+}

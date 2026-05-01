@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# 新启航英语
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+小学生英语单词学习系统（1-3年级），支持单词学习、认识、拼写三种模式，自动收集错题供复习巩固。
 
-Currently, two official plugins are available:
+## 功能特点
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **单词学习** - 学习单元内单词，掌握发音和含义
+- **单词认识** - 选择正确的中文含义
+- **单词拼写** - 根据提示拼写单词
+- **错题集** - 自动收录答错题目，针对性复习
+- **拼读学习** - 26个字母发音和拼读规则学习
+- **打卡记录** - 每日学习打卡，培养学习习惯
+- **数据管理** - 导入导出学习数据
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18 + TypeScript
+- Vite（构建工具）
+- Tailwind CSS（样式）
+- Zustand（状态管理）
+- Capacitor（Android 打包）
 
-## Expanding the ESLint configuration
+## 项目结构
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+src/
+├── pages/           # 页面组件
+├── stores/          # 状态管理（Zustand）
+├── utils/           # 工具函数
+├── components/      # 通用组件
+├── types/           # TypeScript 类型
+└── data/            # 静态数据
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+public/              # 公共资源
+video/               # 字母发音视频
+design/              # 设计文件
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 开发命令
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# 安装依赖
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+
+# 预览生产构建
+npm run preview
+
+# 同步到 Android
+npx cap sync android
+
+# 打包 APK
+cd android && ./gradlew assembleDebug
 ```
+
+## APK 输出
+
+Android APK 位置：`android/app/build/outputs/apk/debug/app-debug.apk`
+
+## 数据存储
+
+所有数据存储在浏览器 localStorage 中：
+- 单元和单词数据
+- 错题记录
+- 学习设置
+- 打卡记录
