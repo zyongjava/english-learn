@@ -51,6 +51,9 @@ capacitor.config.ts
 video/*
 !video/.gitkeep
 
+# Phonics videos
+public/phonics/*
+
 # ================================
 # Design files (if not needed)
 # ================================
