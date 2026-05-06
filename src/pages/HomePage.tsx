@@ -46,6 +46,7 @@ export default function HomePage() {
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'home' | 'phonics'>('home');
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedVideoName, setSelectedVideoName] = useState<string>('');
   const { mistakes } = useMistakeStore();
   const { stats } = useAchievementStore();
   const { dailyGoal } = useSettingsStore();
@@ -110,8 +111,9 @@ export default function HomePage() {
     return (
       <VideoListPage
         onBack={() => setCurrentPage('home')}
-        onVideoSelect={(videoPath) => {
+        onVideoSelect={(videoPath, videoName) => {
           setSelectedVideo(videoPath);
+          setSelectedVideoName(videoName || '');
           setCurrentPage('video-player');
         }}
       />
@@ -121,6 +123,7 @@ export default function HomePage() {
     return (
       <VideoPlayerPage
         videoPath={selectedVideo}
+        videoName={selectedVideoName}
         onBack={() => setCurrentPage('video-list')}
       />
     );

@@ -186,7 +186,7 @@ export default function SettingsPage({ onBack }: Props) {
         </div>
       </div>
 
-      <div className="px-4 py-4 max-w-lg mx-auto">
+      <div className="px-4 py-4">
         {message && (
           <div className={`card-modern mb-4 text-center py-3 ${message.type === 'success' ? 'bg-green-100' : 'bg-red-100'}`}>
             <span className={message.type === 'success' ? 'text-green-600' : 'text-red-600'}>

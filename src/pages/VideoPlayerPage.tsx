@@ -2,17 +2,18 @@ import { useState, useRef, useEffect } from 'react';
 
 interface Props {
   videoPath: string;
+  videoName?: string;
   onBack: () => void;
 }
 
-export default function VideoPlayerPage({ videoPath, onBack }: Props) {
+export default function VideoPlayerPage({ videoPath, videoName, onBack }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState('00:00');
   const [duration, setDuration] = useState('00:00');
 
-  const videoName = videoPath.split('/').pop()?.replace('.mp4', '') || '视频';
+  const displayName = videoName || videoPath.split('/').pop()?.replace('.mp4', '') || '视频';
 
   // 默认自动播放
   useEffect(() => {
@@ -82,7 +83,7 @@ export default function VideoPlayerPage({ videoPath, onBack }: Props) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <h1 className="text-lg font-bold text-white">{videoName}</h1>
+        <h1 className="text-lg font-bold text-white">{displayName}</h1>
       </div>
 
       {/* 视频区域 */}

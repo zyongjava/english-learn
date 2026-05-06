@@ -256,7 +256,7 @@ export default function ManagePage({ onBack }: Props) {
           </div>
         </div>
 
-        <div className="px-4 py-4 max-w-lg mx-auto">
+        <div className="px-4 py-4">
           {filteredWords.length === 0 ? (
             <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
               <div className="text-6xl mb-4">📚</div>
@@ -309,8 +309,7 @@ export default function ManagePage({ onBack }: Props) {
               ))}
             </div>
           )}
-
-                  </div>
+        </div>
 
         {/* 添加/编辑单词模态框 */}
         {showWordForm && (
@@ -463,7 +462,7 @@ export default function ManagePage({ onBack }: Props) {
         </div>
       </div>
 
-      <div className="px-4 py-4 max-w-lg mx-auto">
+      <div className="px-4 py-4">
         {/* 我的词库标题 */}
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-base font-semibold text-gray-800">我的词库 ({units.length})</h2>
@@ -559,8 +558,7 @@ export default function ManagePage({ onBack }: Props) {
           </div>
           创建新单元
         </button>
-
-              </div>
+      </div>
 
       {/* 添加/编辑单元模态框 */}
       {showUnitForm && (

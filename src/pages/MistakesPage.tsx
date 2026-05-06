@@ -139,7 +139,7 @@ export default function MistakesPage({ onBack }: Props) {
           </div>
         </div>
 
-        <div className="px-4 py-6 max-w-lg mx-auto">
+        <div className="px-4 py-6">
           <div className="card-modern min-h-[400px] flex flex-col">
             {showResult ? (
               <div className={`flex-1 flex flex-col items-center justify-center ${isCorrect ? 'animate-bounce-in' : 'animate-shake'}`}>
@@ -274,7 +274,7 @@ export default function MistakesPage({ onBack }: Props) {
         </div>
       </div>
 
-      <div className="px-4 py-4 max-w-lg mx-auto">
+      <div className="px-4 py-4">
         {/* Tab 切换 */}
         <div className="flex gap-2 mb-4">
           {(['all', 'recognition', 'spelling'] as const).map((f) => (
@@ -373,7 +373,7 @@ export default function MistakesPage({ onBack }: Props) {
 
       {/* 开始复习按钮 */}
       {filteredMistakes.length > 0 && (
-        <div className="fixed bottom-20 left-4 right-4 max-w-lg mx-auto">
+        <div className="fixed bottom-20 left-4 right-4">
           <button
             onClick={() => setSelectedMistake(filteredMistakes[0])}
             className="btn-gradient w-full flex items-center justify-center gap-2"

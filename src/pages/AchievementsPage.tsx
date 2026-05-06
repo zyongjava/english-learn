@@ -65,7 +65,7 @@ export default function AchievementsPage({ onBack }: Props) {
         <div className="w-10" />
       </header>
 
-      <main className="pt-14 max-w-md mx-auto">
+      <main className="pt-14">
         {/* 渐变头部区域 */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] px-4 py-8 text-white rounded-b-[32px] shadow-lg">
           <div className="relative z-10">

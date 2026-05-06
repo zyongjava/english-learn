@@ -77,7 +77,7 @@ export default function CheckInPage({ onBack }: Props) {
         </div>
       </div>
 
-      <div className="px-4 py-4 max-w-lg mx-auto">
+      <div className="px-4 py-4">
         {/* 月份切换 */}
         <div className="flex items-center justify-between mb-4">
           <button onClick={handlePrevMonth} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
