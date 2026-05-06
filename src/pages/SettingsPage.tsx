@@ -4,6 +4,7 @@ import { useMistakeStore } from '../stores/mistakeStore';
 import { useSettingsStore } from '../stores/settingsStore';
 import { useAchievementStore } from '../stores/achievementStore';
 import { useCheckInStore } from '../stores/checkInStore';
+import { usePhonicsStore } from '../stores/phonicsStore';
 
 interface Props {
   onBack: () => void;
@@ -18,6 +19,7 @@ export default function SettingsPage({ onBack }: Props) {
   const { soundEnabled, dailyGoal, questionsPerQuiz, toggleSound, setDailyGoal, setQuestionsPerQuiz } = useSettingsStore();
   const { unlockedAchievements, stats: achievementStats } = useAchievementStore();
   const { records: checkInRecords } = useCheckInStore();
+  const { learnedLetters } = usePhonicsStore();
 
   const handleExport = async () => {
     const data = {
@@ -32,6 +34,9 @@ export default function SettingsPage({ onBack }: Props) {
       },
       checkIn: {
         records: checkInRecords,
+      },
+      phonics: {
+        learnedLetters,
       },
     };
 
@@ -114,12 +119,14 @@ export default function SettingsPage({ onBack }: Props) {
         const checkInDays = data.checkIn?.records
           ? Object.values(data.checkIn.records).filter((r: any) => r.completedModules?.length > 0).length
           : 0;
+        const phonicsLetters = data.phonics?.learnedLetters?.length || 0;
         const confirmed = confirm(
           `确定要导入数据吗？\n\n` +
           `- 将导入 ${data.units.length} 个单元\n` +
           `- 将导入 ${data.mistakes?.length || 0} 条错题记录\n` +
           (data.achievements ? `- 将导入 ${data.achievements.unlockedAchievements?.length || 0} 个已解锁成就\n` : '') +
           (checkInDays > 0 ? `- 将导入 ${checkInDays} 天打卡记录\n` : '') +
+          (phonicsLetters > 0 ? `- 将导入 ${phonicsLetters} 个字母拼读进度\n` : '') +
           `注意：这将覆盖您现有的数据！`
         );
         if (!confirmed) return;
@@ -145,6 +152,11 @@ export default function SettingsPage({ onBack }: Props) {
         if (data.checkIn) {
           useCheckInStore.setState({
             records: data.checkIn.records || {},
+          });
+        }
+        if (data.phonics) {
+          usePhonicsStore.setState({
+            learnedLetters: data.phonics.learnedLetters || [],
           });
         }
         setMessage({ type: 'success', text: '导入成功！页面将刷新...' });

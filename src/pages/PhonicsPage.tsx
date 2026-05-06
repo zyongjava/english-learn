@@ -18,40 +18,37 @@ export default function PhonicsPage({ onLetterClick, onTabChange }: Props) {
 
   return (
     <div className="min-h-screen bg-[#F3F4F6] pb-24">
-      {/* 顶部渐变区域 - 新设计风格 */}
-      <header
-        className="px-4 pt-12 pb-16 text-white rounded-b-[40px] relative z-10"
-        style={{ background: 'linear-gradient(135deg, #4F6EF2 0%, #976CF0 100%)' }}
-      >
+      {/* 顶部渐变区域 */}
+      <div className="bg-gradient-primary px-4 pt-12 pb-8 rounded-b-3xl">
         <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-4">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex items-center gap-2">
+            <svg className="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <h1 className="text-xl font-bold">自然拼读</h1>
+            <h1 className="text-xl font-bold text-white">新启航英语</h1>
           </div>
-          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
             </svg>
           </div>
         </div>
-        <div className="mb-2">
-          <p className="text-sm opacity-80">继续加油，同学！</p>
-          <div className="flex justify-between items-end">
-            <h2 className="text-3xl font-bold mt-1">学习进度</h2>
-            <span className="text-4xl font-bold">{progressPercent}%</span>
+        <div className="mb-4">
+          <p className="text-white/70 text-sm mb-1">继续加油，同学！</p>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-white">学习进度</h2>
+            <span className="text-3xl font-bold text-white">{progressPercent}%</span>
+          </div>
+          <div className="mt-3 h-2 bg-white/20 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-white rounded-full transition-all duration-500"
+              style={{ width: `${progressPercent}%` }}
+            />
           </div>
         </div>
-        <div className="w-full bg-white/20 h-1.5 rounded-full mt-3 overflow-hidden">
-          <div
-            className="bg-white h-full transition-all duration-500"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
-      </header>
+      </div>
 
-      <main className="flex-1 -mt-8 px-5 pb-24 relative z-20">
+      <main className="-mt-4 px-4 pb-24 relative z-20">
         {/* 学习进度卡片 - 带环形进度 */}
         <section className="bg-white rounded-xl p-5 mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-start mb-6">

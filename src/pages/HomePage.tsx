@@ -12,8 +12,10 @@ import CheckInPage from './CheckInPage';
 import ProfilePage from './ProfilePage';
 import PhonicsPage from './PhonicsPage';
 import PhonicsLetterPage from './PhonicsLetterPage';
+import VideoListPage from './VideoListPage';
+import VideoPlayerPage from './VideoPlayerPage';
 
-type Page = 'home' | 'manage' | 'learning' | 'mistakes' | 'settings' | 'achievements' | 'checkin' | 'phonics' | 'phonics-letter';
+type Page = 'home' | 'manage' | 'learning' | 'mistakes' | 'settings' | 'achievements' | 'checkin' | 'phonics' | 'phonics-letter' | 'video-list' | 'video-player';
 
 // 计算学习进度百分比
 function calculateProgress(dailyGoal: number, completed: number): number {
@@ -43,6 +45,7 @@ export default function HomePage() {
   const [showProfile, setShowProfile] = useState(false);
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'home' | 'phonics'>('home');
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const { mistakes } = useMistakeStore();
   const { stats } = useAchievementStore();
   const { dailyGoal } = useSettingsStore();
@@ -100,6 +103,25 @@ export default function HomePage() {
             setCurrentPage('home');
           }
         }}
+      />
+    );
+  }
+  if (currentPage === 'video-list') {
+    return (
+      <VideoListPage
+        onBack={() => setCurrentPage('home')}
+        onVideoSelect={(videoPath) => {
+          setSelectedVideo(videoPath);
+          setCurrentPage('video-player');
+        }}
+      />
+    );
+  }
+  if (currentPage === 'video-player' && selectedVideo) {
+    return (
+      <VideoPlayerPage
+        videoPath={selectedVideo}
+        onBack={() => setCurrentPage('video-list')}
       />
     );
   }
@@ -259,15 +281,25 @@ export default function HomePage() {
           </button>
         </div>
 
-        {/* 学习新航向推荐卡片 */}
-        <div className="card-modern p-6 mb-4 relative overflow-hidden">
+        {/* 课堂教学视频卡片 */}
+        <button
+          onClick={() => setCurrentPage('video-list')}
+          className="card-modern p-6 mb-4 relative overflow-hidden text-left w-full card-pressable"
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 opacity-90" />
           <div className="absolute right-0 bottom-0 w-32 h-32 bg-white/5 rounded-full -mr-10 -mb-10" />
-          <div className="relative z-10">
-            <h4 className="font-bold text-white mb-2">学习新航向</h4>
-            <p className="text-lg text-white/90">每天十分钟，英语更轻松</p>
+          <div className="absolute right-4 top-1/2 -translate-y-1/2">
+            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
           </div>
-        </div>
+          <div className="relative z-10">
+            <h4 className="font-bold text-white mb-2">课堂教学视频</h4>
+            <p className="text-white/70 text-sm">英语课堂・持续学习不停歇</p>
+          </div>
+        </button>
       </div>
 
       {/* 底部 Tab 栏 */}
