@@ -9,6 +9,7 @@ interface Props {
 export default function VideoPlayerPage({ videoPath, videoName, onBack }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState('00:00');
   const [duration, setDuration] = useState('00:00');
@@ -17,14 +18,20 @@ export default function VideoPlayerPage({ videoPath, videoName, onBack }: Props)
 
   // 默认自动播放
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch(() => {
-        // 自动播放失败，保持暂停状态
-      });
+    const tryPlay = () => {
+      if (videoRef.current && isLoaded) {
+        videoRef.current.play().then(() => {
+          setIsPlaying(true);
+        }).catch(() => {
+          // 自动播放失败，可能需要用户交互
+        });
+      }
+    };
+
+    if (isLoaded) {
+      tryPlay();
     }
-  }, []);
+  }, [isLoaded]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -54,6 +61,13 @@ export default function VideoPlayerPage({ videoPath, videoName, onBack }: Props)
   const handleLoadedMetadata = () => {
     if (videoRef.current) {
       setDuration(formatTime(videoRef.current.duration));
+      setIsLoaded(true);
+      // 元数据加载完成后自动播放
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {
+        // 自动播放失败
+      });
     }
   };
 

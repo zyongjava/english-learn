@@ -85,6 +85,7 @@ interface LocalVideosStore {
   videos: LocalVideo[];
   loadVideos: () => Promise<void>;
   addVideo: (name: string, path: string, size: number) => void;
+  updateVideoName: (id: string, name: string) => void;
   removeVideo: (id: string) => void;
   clearVideos: () => void;
 }
@@ -136,6 +137,20 @@ export const useLocalVideosStore = create<LocalVideosStore>()(
         set((state) => ({
           videos: state.videos.filter((v) => v.id !== id),
         }));
+      },
+
+      updateVideoName: async (id, name) => {
+        const { videos } = get();
+        const video = videos.find((v) => v.id === id);
+        if (video) {
+          const updatedVideo = { ...video, name };
+          // 更新 IndexedDB
+          await saveVideo(updatedVideo).catch(console.error);
+          // 更新 store
+          set((state) => ({
+            videos: state.videos.map((v) => v.id === id ? updatedVideo : v),
+          }));
+        }
       },
 
       clearVideos: async () => {

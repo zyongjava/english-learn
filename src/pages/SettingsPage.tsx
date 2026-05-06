@@ -325,7 +325,16 @@ export default function SettingsPage({ onBack }: Props) {
           </div>
 
           <div className="mt-4 border-t border-gray-100">
-            <button className="w-full flex items-center justify-between py-3 hover:bg-gray-50 transition-colors">
+            <button
+              onClick={() => alert('若您在使用 APP 过程中遇到功能异常、卡顿闪退、内容问题，或有产品建议、优化想法，欢迎随时提交反馈 zyongjava@163.com。我们会第一时间查看并跟进处理，持续为您带来更好的使用体验！')}
+              className="w-full flex items-center justify-between py-3 hover:bg-gray-50 transition-colors"
+            >
+              <span className="text-gray-700">帮助反馈</span>
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button className="w-full flex items-center justify-between py-3 hover:bg-gray-50 transition-colors border-t border-gray-100">
               <span className="text-gray-700">用户协议</span>
               <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

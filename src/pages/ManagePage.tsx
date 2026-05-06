@@ -35,7 +35,7 @@ export default function ManagePage({ onBack }: Props) {
   const [showAllUnits, setShowAllUnits] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const { units, addUnit, updateUnit, deleteUnit, addWord, updateWord, deleteWord, getUnit } = useUnitStore();
+  const { units, addUnit, updateUnit, deleteUnit, addWord, updateWord, deleteWord, getUnit, resetToDefault } = useUnitStore();
   const { getMistakesByUnit, removeMistake, mistakes } = useMistakeStore();
   const { voiceName } = useSettingsStore();
 
@@ -163,8 +163,8 @@ export default function ManagePage({ onBack }: Props) {
     unit.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // 显示的单元列表（默认只显示前3个，点击"查看全部"显示全部）
-  const displayUnits = showAllUnits ? filteredUnits : filteredUnits.slice(0, 3);
+  // 显示的单元列表（默认只显示前4个，点击"查看全部"显示全部）
+  const displayUnits = showAllUnits ? filteredUnits : filteredUnits.slice(0, 4);
 
   const filteredWords = selectedUnit?.words.filter(word =>
     word.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -431,6 +431,20 @@ export default function ManagePage({ onBack }: Props) {
           </button>
           <h1 className="text-xl font-bold text-white flex-1">单词管理</h1>
           <button
+            onClick={() => {
+              if (confirm('确定要重置为默认单词吗？这将覆盖当前所有单词数据。')) {
+                resetToDefault();
+                alert('已重置为默认单词');
+              }
+            }}
+            className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+            title="重置为默认"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </button>
+          <button
             onClick={() => { setEditingUnit(null); setUnitName(''); setShowUnitForm(true); }}
             className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
           >
@@ -466,7 +480,7 @@ export default function ManagePage({ onBack }: Props) {
         {/* 我的词库标题 */}
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-base font-semibold text-gray-800">我的词库 ({units.length})</h2>
-          {filteredUnits.length > 3 && (
+          {filteredUnits.length > 4 && (
             <button
               onClick={() => setShowAllUnits(!showAllUnits)}
               className="text-sm text-blue-600 font-medium"

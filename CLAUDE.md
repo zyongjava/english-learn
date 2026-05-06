@@ -46,6 +46,24 @@ cd android && ./gradlew assembleDebug
 
 APK 输出位置：`android/app/build/outputs/apk/debug/app-debug.apk`
 
+### Git 提交流程
+
+```bash
+# 1. 暂存修改的文件（排除视频文件）
+git add <修改的文件>
+
+# 2. 如需添加新功能文件（不含视频）
+git add src/ android/capacitor.config.ts design/
+
+# 3. 提交（注意：不提交视频文件）
+git commit -m "提交信息"
+
+# 4. 推送到远程
+git push
+```
+
+**重要**：视频文件（`public/class-video/`、`public/phonics/`）不提交到 Git，通过 `.gitignore` 忽略。
+
 ## 技术栈
 
 - React 18 + TypeScript

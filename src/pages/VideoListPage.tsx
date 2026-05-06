@@ -29,7 +29,9 @@ interface Props {
 export default function VideoListPage({ onBack, onVideoSelect }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
-  const { videos: localVideos, removeVideo, loadVideos } = useLocalVideosStore();
+  const [editingVideo, setEditingVideo] = useState<LocalVideo | null>(null);
+  const [editName, setEditName] = useState('');
+  const { videos: localVideos, removeVideo, loadVideos, updateVideoName } = useLocalVideosStore();
 
   // 页面加载时从 IndexedDB 加载视频
   useEffect(() => {
@@ -89,6 +91,24 @@ export default function VideoListPage({ onBack, onVideoSelect }: Props) {
       return `${(bytes / 1024).toFixed(1)} KB`;
     }
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  };
+
+  const handleEditName = (video: LocalVideo) => {
+    setEditingVideo(video);
+    setEditName(video.name);
+  };
+
+  const handleSaveName = () => {
+    if (editingVideo && editName.trim()) {
+      updateVideoName(editingVideo.id, editName.trim());
+      setEditingVideo(null);
+      setEditName('');
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setEditingVideo(null);
+    setEditName('');
   };
 
   return (
@@ -168,16 +188,58 @@ export default function VideoListPage({ onBack, onVideoSelect }: Props) {
                       <p className="text-xs text-gray-400">{formatSize(video.size)}</p>
                     </div>
                   </button>
-                  <button
-                    onClick={() => removeVideo(video.id)}
-                    className="p-2 text-gray-400 hover:text-red-500"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                  </button>
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => handleEditName(video)}
+                      className="p-2 text-gray-400 hover:text-blue-500"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() => removeVideo(video.id)}
+                      className="p-2 text-gray-400 hover:text-red-500"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* 编辑名称弹窗 */}
+          {editingVideo && (
+            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+              <div className="bg-white rounded-2xl w-full max-w-sm p-6">
+                <h3 className="text-lg font-bold text-gray-800 mb-4">修改视频名称</h3>
+                <input
+                  type="text"
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-blue-500"
+                  placeholder="请输入视频名称"
+                  autoFocus
+                />
+                <div className="flex gap-3 mt-4">
+                  <button
+                    onClick={handleCancelEdit}
+                    className="flex-1 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold"
+                  >
+                    取消
+                  </button>
+                  <button
+                    onClick={handleSaveName}
+                    disabled={!editName.trim()}
+                    className="flex-1 py-3 bg-blue-500 text-white rounded-xl font-semibold disabled:opacity-50"
+                  >
+                    保存
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>

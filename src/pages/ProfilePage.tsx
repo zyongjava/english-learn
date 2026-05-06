@@ -114,7 +114,9 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
         </svg>
       ),
       title: '帮助与反馈',
-      onClick: () => {},
+      onClick: () => {
+        alert('若您在使用 APP 过程中遇到功能异常、卡顿闪退、内容问题，或有产品建议、优化想法，欢迎随时提交反馈\nzyongjava@163.com。我们会第一时间查看并跟进处理，持续为您带来更好的使用体验！');
+      },
     },
   ];
 
