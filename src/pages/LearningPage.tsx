@@ -689,7 +689,7 @@ export default function LearningPage({ onBack }: Props) {
             <div className="h-full bg-white rounded-full transition-all duration-500" style={{ width: `${((currentIndex + 1) / studyWords.length) * 100}%` }} />
           </div>
         </div>
-        <div className="px-4 py-6 max-w-lg mx-auto">
+        <div className="px-4 py-6">
           <div className="card-modern min-h-[450px] flex flex-col">
             <div className="flex-1 flex flex-col items-center justify-center">
               <div className="relative">
@@ -754,7 +754,7 @@ export default function LearningPage({ onBack }: Props) {
           </div>
         </div>
 
-        <div className="px-4 py-6 max-w-lg mx-auto">
+        <div className="px-4 py-6">
           {/* 选择单元 */}
           <div className="card-modern p-4 mb-4">
             <h2 className="text-sm text-gray-500 mb-3">选择单元</h2>
@@ -987,7 +987,7 @@ export default function LearningPage({ onBack }: Props) {
         </div>
       </div>
 
-      <div className="px-4 py-6 max-w-lg mx-auto">
+      <div className="px-4 py-6">
         <div className="card-modern min-h-[400px] flex flex-col">
           {currentQuestion && (
             <>

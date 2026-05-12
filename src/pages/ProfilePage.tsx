@@ -36,7 +36,7 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
   const { units } = useUnitStore();
   const { records } = useCheckInStore();
   const { getActiveMistakes } = useMistakeStore();
-  const { avatarUrl, setAvatarUrl } = useSettingsStore();
+  const { avatarUrl, setAvatarUrl, nickname } = useSettingsStore();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const streakDays = calculateStreakDays(records);
@@ -69,6 +69,14 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
   // 快捷入口
   const quickEntries = [
     {
+      icon: '🎁',
+      title: '礼物兑换',
+      subtitle: '积分好礼等你拿',
+      color: 'bg-pink-50',
+      iconColor: 'text-pink-500',
+      onClick: () => onNavigate('gift'),
+    },
+    {
       icon: '🏆',
       title: '成就勋章',
       subtitle: `已获得 ${unlockedAchievements.length} 枚`,
@@ -82,7 +90,7 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
       subtitle: `${totalWords} 个单词`,
       color: 'bg-purple-50',
       iconColor: 'text-purple-500',
-      onClick: () => onNavigate('manage'), // 跳转到单词管理
+      onClick: () => onNavigate('manage'),
     },
   ];
 
@@ -97,15 +105,6 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
       ),
       title: '偏好设置',
       onClick: () => onNavigate('settings'),
-    },
-    {
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-      title: '账号与安全',
-      onClick: () => {},
     },
     {
       icon: (
@@ -163,7 +162,7 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
           />
 
           <div>
-            <h2 className="text-xl font-bold text-white">年年</h2>
+            <h2 className="text-xl font-bold text-white">{nickname || '小学员'}</h2>
             <div className="flex items-center gap-2 mt-1">
               <div className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full">
                 <svg className="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">

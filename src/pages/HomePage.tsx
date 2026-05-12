@@ -14,8 +14,9 @@ import PhonicsPage from './PhonicsPage';
 import PhonicsLetterPage from './PhonicsLetterPage';
 import VideoListPage from './VideoListPage';
 import VideoPlayerPage from './VideoPlayerPage';
+import GiftExchangePage from './GiftExchangePage';
 
-type Page = 'home' | 'manage' | 'learning' | 'mistakes' | 'settings' | 'achievements' | 'checkin' | 'phonics' | 'phonics-letter' | 'video-list' | 'video-player';
+type Page = 'home' | 'manage' | 'learning' | 'mistakes' | 'settings' | 'achievements' | 'checkin' | 'phonics' | 'phonics-letter' | 'video-list' | 'video-player' | 'gift';
 
 // 计算学习进度百分比
 function calculateProgress(dailyGoal: number, completed: number): number {
@@ -49,7 +50,7 @@ export default function HomePage() {
   const [selectedVideoName, setSelectedVideoName] = useState<string>('');
   const { mistakes } = useMistakeStore();
   const { stats } = useAchievementStore();
-  const { dailyGoal } = useSettingsStore();
+  const { dailyGoal, nickname } = useSettingsStore();
   const { records } = useCheckInStore();
 
   const activeMistakes = mistakes.filter((m) => !m.mastered);
@@ -128,6 +129,9 @@ export default function HomePage() {
       />
     );
   }
+  if (currentPage === 'gift') {
+    return <GiftExchangePage onBack={() => { setCurrentPage('home'); setShowProfile(true); }} />;
+  }
 
   // 我的页面
   if (showProfile) {
@@ -165,7 +169,7 @@ export default function HomePage() {
 
         {/* 学习进度 */}
         <div className="mb-4">
-          <p className="text-white/70 text-sm mb-1">继续加油，同学！</p>
+          <p className="text-white/70 text-sm mb-1">{nickname ? `${nickname}，加油！` : '继续加油，同学！'}</p>
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-white">学习进度</h2>
             <span className="text-3xl font-bold text-white">{progressPercent}%</span>

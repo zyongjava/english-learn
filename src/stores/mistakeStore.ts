@@ -60,7 +60,7 @@ export const useMistakeStore = create<MistakeStore>()(
             wrongAnswer,
             correctAnswer: type === 'recognition' ? word.meaning : word.word,
             options,
-            times: 0,
+            times: 2,
             lastReviewAt: Date.now(),
             nextReviewAt: Date.now(),
             mastered: false,
